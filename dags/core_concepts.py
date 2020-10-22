@@ -1,7 +1,10 @@
 from airflow import DAG
 from airflow.utils.dates import days_ago
+
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.python_operator import PythonOperator
+
+from airflow.utils.helpers import chain, cross_downstream
 from random import seed, random
 
 default_arguments = {'owner': 'Leo Arruda', 'start_date': days_ago(1)}
@@ -29,3 +32,19 @@ with DAG(
         python_callable=print_random_number,
         op_args=[1]
     )
+
+bash_task >> python_task
+
+# or bash_task.set_downstream(python_task)
+
+# op1 >> op2 >> op3 >> op4
+# the same as:
+# chain(op1,op2,op3,op4)
+
+# cross_downstream([op1,op2], [op3,op4])
+#  [op1,op2] >> op3
+#  [op1,op2] >> op4
+
+
+
+
