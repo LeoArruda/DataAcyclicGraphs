@@ -1,5 +1,6 @@
 {
     "project":"leo-airflow-tutorial-demo",
     "landing_bucket":"leo-logistics-landing",
-    "backup-bucket":"leo-logistigs-backup-bucket"
+    "backup-bucket":"leo-logistigs-backup-bucket",
+    "spark_bucket":"leo-logistics-spark-bucket"
 }
