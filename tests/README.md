@@ -1,6 +1,6 @@
-# Section 7: Testing Airflow DAGs
+# Testing Airflow DAGs
 
-This directory holds the source code of Section 7: Testing Airflow DAGs.
+This directory holds the source code for testing Airflow DAGs.
 
 ## How to run unit tests
 
