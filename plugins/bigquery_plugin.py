@@ -81,6 +81,7 @@ class BigQueryDatasetSensor(BaseSensorOperator):
     def poke(self, context):
         hook = BigQueryHook(bigquery_conn_id=self.gcp_conn_id)
         service = hook.get_service()
+        
 
         try:
             service.datasets().get(
